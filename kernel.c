@@ -15,6 +15,8 @@ kernel_main()
 	and last 8 bits determine the color of that character. We used an 
 	8 bit char pointer for avoiding compelixy when writing to VGA character 
 	slots. There for each 2 indexes are a single VGA slot here.
+	
+	(See Wikipedia "VGA Text Mode")
 	*/	 
 
 	vgaBuffer[0]  = 'H'; // First 8 bits: character
