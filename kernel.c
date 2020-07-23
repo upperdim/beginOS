@@ -38,7 +38,7 @@ kernel_main()
 	vgaBuffer[11] =  64;
 	
 	int vgaBufferPos = 12;
-	const car *message = " world!";
+	const char *message = " world!";
 	// Prints the message
 	int i = 0;
 	while (message[i] != '\0') {
