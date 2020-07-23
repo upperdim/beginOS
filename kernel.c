@@ -1,4 +1,4 @@
-char* vgaBuffer = (char*) 0xb8000; // screen buffer
+char* vgaBuffer = (char*) 0xb8000; // screen buffer (VGA Text Mode)
 
 #define VGA_HEIGHT 80 // screen height
 #define VGA_WIDTH 25 // screen width
@@ -13,8 +13,8 @@ kernel_main()
 	/*
 	Each VGA character is 16 bits. First 8 bits determine the ASCII character
 	and last 8 bits determine the color of that character. We used an 
-	8 bit char pointer for avoiding compelixy when writing to VGA character 
-	slots. There for each 2 indexes are a single VGA slot here.
+	8 bit char pointer for avoiding complexity when writing to each element
+	in VGA buffer. Therefore each 2 indexes here make up a single VGA character.
 	
 	(See Wikipedia "VGA Text Mode")
 	*/	 
@@ -41,7 +41,7 @@ kernel_main()
 	// so I have deleted those parts
 }
 
-// We have to clear the left over text from boot screen
+// We have to clear the leftover text from boot screen
 void terminal_clear_screen(void)
 {
 	/*
